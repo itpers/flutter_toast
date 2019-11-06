@@ -7,8 +7,17 @@ class Toast {
   static OverlayEntry _overlayEntry;
   static Timer _timer;
 
+  /// 显示 Toast
+  /// [msg] 显示信息
+  /// [bgColor] 背景颜色
+  /// [textColor] 文字颜色
+  /// [textSize] 文字大小
+  /// [duration] 显示时长(单位毫秒)
   static show(BuildContext context, String msg,
-      {Color bgColor, Color textColor = Colors.white, double textSize = 14, int duration = 2000}) {
+      {Color bgColor,
+      Color textColor = Colors.white,
+      double textSize = 14,
+      int duration = 2000}) {
     dismiss();
 
     if (bgColor == null) bgColor = Colors.black.withOpacity(0.7);
@@ -52,6 +61,7 @@ class Toast {
     _timer = Timer(Duration(milliseconds: duration), () => dismiss());
   }
 
+  ///取消 Toast
   static dismiss() {
     _timer?.cancel();
     _overlayEntry?.remove();
