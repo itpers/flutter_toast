@@ -8,7 +8,7 @@ class Toast {
   static Timer _timer;
 
   static show(BuildContext context, String msg,
-      {Color bgColor, Color textColor = Colors.white, double textSize = 14}) {
+      {Color bgColor, Color textColor = Colors.white, double textSize = 14, int duration = 2000}) {
     dismiss();
 
     if (bgColor == null) bgColor = Colors.black.withOpacity(0.7);
@@ -49,7 +49,7 @@ class Toast {
     });
 
     Overlay.of(context).insert(_overlayEntry);
-    _timer = Timer(Duration(milliseconds: 2000), () => dismiss());
+    _timer = Timer(Duration(milliseconds: duration), () => dismiss());
   }
 
   static dismiss() {
