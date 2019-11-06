@@ -10,7 +10,7 @@
 Toast.show(context, '信息');
 ```
 
-#### 自定义
+#### 自定义(以下均为可选参数)
 > bgColor: 背景颜色, textColor: 文字颜色, textSize: 文字大小, duration: 显示时长(毫秒)
 
 ```dart
